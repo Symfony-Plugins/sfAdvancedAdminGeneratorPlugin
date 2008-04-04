@@ -10,11 +10,11 @@
   <email>romain@cambien.net</email>
   <active>yes</active>
  </lead>
- <date>2007-10-23</date>
- <time>18:23:41</time>
+ <date>2007-10-29</date>
+ <time>11:23:45</time>
  <version>
-  <release>0.1.1</release>
-  <api>0.1.1</api>
+  <release>0.1.2</release>
+  <api>0.1.2</api>
  </version>
  <stability>
   <release>beta</release>
@@ -53,6 +53,7 @@
    <file md5sum="5b06c2d05f5e2f7db2edbde0d19ab631" name="data/generator/sfAdvancedAdmin/default/template/templates/createSuccess.php" role="data" />
    <file md5sum="815ea1e613f2d8ef462de8eeee34d173" name="data/generator/sfAdvancedAdmin/default/template/templates/editSuccess.php" role="data" />
    <file md5sum="b980e7a592fe5a096c2e1770c8c04f1e" name="data/generator/sfAdvancedAdmin/default/template/templates/listSuccess.php" role="data" />
+   <file md5sum="2a6640f718e05f36827a1aa5d0040f1f" name="data/generator/sfAdvancedAdmin/default/template/templates/showSuccess.php" role="data" />
    <file md5sum="ea9bc1fa3b4205dbe291edca922dbb0e" name="lib/sfAdvancedAdminGenerator.class.php" role="data" />
    <file md5sum="d26db58bbe7a214e1a993e905827b435" name="README" role="data" />
    <file md5sum="f8f064191ae90258ba4b3005852a2bbd" name="LICENSE" role="data" />
