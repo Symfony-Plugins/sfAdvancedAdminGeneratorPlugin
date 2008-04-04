@@ -138,6 +138,17 @@ class <?php echo $this->getGeneratedModuleName() ?>Actions extends sfActions
     return sfView::SUCCESS;
   }
 
+  public function handleErrorCreate()
+  {
+    $this->preExecute();
+    $this-><?php echo $this->getSingularName() ?> = $this->get<?php echo $this->getClassName() ?>OrCreate();
+    $this->update<?php echo $this->getClassName() ?>FromRequest();
+
+    $this->labels = $this->getLabels();
+
+    return sfView::SUCCESS;
+  }
+
   public function handlePost()
   {
     $this->update<?php echo $this->getClassName() ?>FromRequest();
