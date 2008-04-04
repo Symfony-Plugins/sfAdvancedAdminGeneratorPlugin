@@ -1,0 +1,67 @@
+= sfAdvancedAdminGenerator plug-in =
+
+The `sfAdvancedAdminGenerator` provide advanced functionalities for admin generator.
+
+Currently, only one is the distinct configurations between create and edit action
+
+== Installation ==
+
+  * Install the plug-in
+  
+    {{{
+      symfony plugin-install http://plugins.symfony-project.com/sfAdvancedLoggerPlugin
+    }}}
+
+  * change the generator in your `generator.yml`
+
+    {{{
+generator:
+  class:              sfAdvancedAdminGenerator
+  param:
+    model_class:      Book
+    theme:            default
+    
+    list:
+      object_actions:
+        _edit:
+
+    edit:
+      title: Edit a book
+      display: [author_id, title]
+      fields:
+        author_id: {params: disabled=true} ## Can't edit the author of an existing book
+      actions:
+        _list:
+        _save:
+
+    create:
+      title: Create a new book
+      actions:
+        _list:
+        _save:
+        _save_and_add: ## allow to add an other book after a creation
+    }}}
+
+  * Clear the cache
+
+    {{{
+      symfony cc
+    }}}
+
+  * You're done.
+
+== Compatibility with default symfony generator ==
+
+If no 'create' section is present in your configuration, the generator act exactly like the default generator (create action use edit configuration) 
+
+== Configuration ==
+
+The configuration is the same that the symfony default admin generation.
+
+[http://www.symfony-project.com/book/1_0/14-Generators Click for more information] 
+
+== Changelog ==
+
+=== 2007-10-16 | 0.1.0 ===
+
+ * romain: plug-in added to symfony

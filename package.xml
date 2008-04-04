@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.11" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfAdvancedAdminGeneratorPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>Advanced Admin Generator for symfony</summary>
+ <description>sfAdvancedAdminGeneratorPlugin allow distinct configurations between create and edit</description>
+ <lead>
+  <name>Romain Cambien</name>
+  <user>romain</user>
+  <email>romain@cambien.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2007-10-16</date>
+ <time>16:25:54</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.symfony-project.com/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="86e31c9189ba620ae4d839e2d9fc0a02" name="data/generator/sfAdvancedAdmin/default/template/actions/actions.class.php" role="data" />
+   <file md5sum="99bf4065cd55a4f6cddadce48c284a88" name="data/generator/sfAdvancedAdmin/default/template/templates/_create_actions.php" role="data" />
+   <file md5sum="d41d8cd98f00b204e9800998ecf8427e" name="data/generator/sfAdvancedAdmin/default/template/templates/_create_footer.php" role="data" />
+   <file md5sum="e431558cc4b01f41b9825a751782134d" name="data/generator/sfAdvancedAdmin/default/template/templates/_create_form.php" role="data" />
+   <file md5sum="e40ef5265dd4213fdcbfeb0735e1b8b0" name="data/generator/sfAdvancedAdmin/default/template/templates/_create_header.php" role="data" />
+   <file md5sum="f94fa0edce99730123d17db97902e1c2" name="data/generator/sfAdvancedAdmin/default/template/templates/_create_messages.php" role="data" />
+   <file md5sum="599788fbcbf42755f1b9297cd7b81bdb" name="data/generator/sfAdvancedAdmin/default/template/templates/_edit_actions.php" role="data" />
+   <file md5sum="d41d8cd98f00b204e9800998ecf8427e" name="data/generator/sfAdvancedAdmin/default/template/templates/_edit_footer.php" role="data" />
+   <file md5sum="84ed842510100ba5b0ed36f711b86933" name="data/generator/sfAdvancedAdmin/default/template/templates/_edit_form.php" role="data" />
+   <file md5sum="d41d8cd98f00b204e9800998ecf8427e" name="data/generator/sfAdvancedAdmin/default/template/templates/_edit_header.php" role="data" />
+   <file md5sum="f94fa0edce99730123d17db97902e1c2" name="data/generator/sfAdvancedAdmin/default/template/templates/_edit_messages.php" role="data" />
+   <file md5sum="cbc41f754c7d8d689241c167a4ad818e" name="data/generator/sfAdvancedAdmin/default/template/templates/_filters.php" role="data" />
+   <file md5sum="c2de281f9be6e014bb382b2aa4161632" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_actions.php" role="data" />
+   <file md5sum="d41d8cd98f00b204e9800998ecf8427e" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_footer.php" role="data" />
+   <file md5sum="d41d8cd98f00b204e9800998ecf8427e" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_header.php" role="data" />
+   <file md5sum="ba045ac332bd8aa31e47496e9cd51a76" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_messages.php" role="data" />
+   <file md5sum="37f96b05d70df8f26b250b995c6a001f" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_td_actions.php" role="data" />
+   <file md5sum="a586a14e0e6cb81086d79b4cc563f1ff" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_td_stacked.php" role="data" />
+   <file md5sum="ebbfcb717d26f4841c26c57770275059" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_td_tabular.php" role="data" />
+   <file md5sum="a56f41c8133291c743ea56b5d83146c2" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_th_stacked.php" role="data" />
+   <file md5sum="cf07bc656e18ae390e4b7f7706ee4490" name="data/generator/sfAdvancedAdmin/default/template/templates/_list_th_tabular.php" role="data" />
+   <file md5sum="5fe99a831753020603c3ea924c2b246c" name="data/generator/sfAdvancedAdmin/default/template/templates/_list.php" role="data" />
+   <file md5sum="5b06c2d05f5e2f7db2edbde0d19ab631" name="data/generator/sfAdvancedAdmin/default/template/templates/createSuccess.php" role="data" />
+   <file md5sum="815ea1e613f2d8ef462de8eeee34d173" name="data/generator/sfAdvancedAdmin/default/template/templates/editSuccess.php" role="data" />
+   <file md5sum="b980e7a592fe5a096c2e1770c8c04f1e" name="data/generator/sfAdvancedAdmin/default/template/templates/listSuccess.php" role="data" />
+   <file md5sum="0ec6622b94a737d308b3732db9b8b75e" name="lib/sfAdvancedAdminGenerator.class.php" role="data" />
+   <file md5sum="3507a2dd251ab4452b2e509e6c594587" name="README" role="data" />
+   <file md5sum="f8f064191ae90258ba4b3005852a2bbd" name="LICENSE" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.0.0</min>
+    <max>1.1.0</max>
+    <exclude>1.1.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>Initial</changelog>
+</package>
