@@ -7,10 +7,28 @@
  * @subpackage <?php echo $this->getGeneratedModuleName() ?>
 
  * @author     Fabien Potencier <fabien.potencier@symfony-project.com>
- * @version    SVN: $Id: actions.class.php 300 2007-10-23 15:18:49Z romain $
+ * @version    SVN: $Id: actions.class.php 390 2007-12-18 15:59:00Z romain $
  */
 class <?php echo $this->getGeneratedModuleName() ?>Actions extends sfActions
 {
+  public function preExecute()
+  {
+    $this->maps = $this->getMaps();
+  }
+  
+  public function executeAutocomplete() {
+    $table  = sfInflector::camelize($this->getRequestParameter('table'));
+    $field  = sfInflector::camelize($this->getRequestParameter('field'));
+    $search = $this->getRequestParameter("${table}_${field}_search");
+    $return = '';
+    $c = new Criteria();
+    $c->add(constant($table.'Peer::'.strtoupper($field)), '%'.$search.'%', Criteria::LIKE);
+    foreach (call_user_func(array($table.'Peer', 'doSelect'), $c) as $item) {
+      $return .= '<li id="'.$item->getId().'">'.call_user_func(array($item, 'get'.$this->getRequestParameter('field'))).'</li>';
+    }
+    return $this->renderText('<ul>'.$return.'</ul>');
+  }
+  
   public function executeIndex()
   {
     return $this->forward('<?php echo $this->getModuleName() ?>', 'list');
@@ -494,5 +512,10 @@ $column = sfPropelManyToMany::getColumn($class, $through_class);
         break;
 <?php endforeach; ?>
     }
+  }
+  
+  protected function getMaps()
+  {
+    return <?php var_export($this->getParameterValue('maps'))?>;
   }
 }

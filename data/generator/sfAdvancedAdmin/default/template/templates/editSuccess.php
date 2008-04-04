@@ -1,4 +1,4 @@
-[?php use_helper('Object', 'Validation', 'ObjectAdmin', 'I18N', 'Date') ?]
+[?php use_helper('Object', 'Validation', 'ObjectAdmin', 'I18N', 'Date', 'AdvancedAdmin') ?]
 
 [?php use_stylesheet('<?php echo $this->getParameterValue('css', sfConfig::get('sf_admin_web_dir').'/css/main') ?>') ?]
 

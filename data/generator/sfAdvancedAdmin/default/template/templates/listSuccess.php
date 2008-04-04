@@ -21,7 +21,7 @@
 [?php if (!$pager->getNbResults()): ?]
 [?php echo __('no result') ?]
 [?php else: ?]
-[?php include_partial('<?php echo $this->getModuleName() ?>/list', array('pager' => $pager)) ?]
+[?php include_partial('<?php echo $this->getModuleName() ?>/list', array('pager' => $pager, 'maps' => $maps)) ?]
 [?php endif; ?]
 [?php include_partial('list_actions') ?]
 </div>

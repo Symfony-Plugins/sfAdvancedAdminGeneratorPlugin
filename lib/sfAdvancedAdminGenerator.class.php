@@ -80,9 +80,38 @@ class sfAdvancedAdminGenerator extends sfPropelAdminGenerator
     return parent::getCrudColumnEditTag($column, $params);
   }
   
+  /**
+   * Generates a PHP call to an object helper.
+   *
+   * @param string The helper name
+   * @param string The column name
+   * @param array  An array of parameters
+   * @param array  An array of local parameters
+   *
+   * @return string PHP code
+   */
+  function getPHPObjectHelper($helperName, $column, $params, $localParams = array())
+  {
+  	if (null !== ($map = $this->getParameterValue('maps.'.$column->getName()))) {
+  		// Load map
+  		$params['map'] = $map;
+  		$helperName    = 'select_map_tag'; 
+  	}
+  	
+  	return parent::getPHPObjectHelper($helperName, $column, $params, $localParams);
+  }
+  
   public function getColumnShowTag($column, $params = array())
   {
   	return $this->getColumnListTag($column, $params);
+  }
+  
+  public function getColumnListTag($column, $params = array()) {
+  	$return = parent::getColumnListTag($column, $params);
+  	if (!$column->isComponent() && !$column->isPartial()) {
+  		$return = '(null !== ($val = '.$return.') && isset($maps["'.$column->getName().'"][$val])?$maps["'.$column->getName().'"][$val]:$val)';
+  	}
+  	return $return;
   }
   
   public function getLinkToAction($actionName, $params, $pk_link = false) {
