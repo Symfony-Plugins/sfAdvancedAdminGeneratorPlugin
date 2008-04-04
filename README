@@ -2,14 +2,18 @@
 
 The `sfAdvancedAdminGenerator` provide advanced functionalities for admin generator.
 
-Currently, only one is the distinct configurations between create and edit action
+- Distinct configurations between create and edit action
+
+- Add a 'show' action that provide a view for the object (no edit)
+
+- Change the action for the hyperlink on the list
 
 == Installation ==
 
   * Install the plug-in
   
     {{{
-      symfony plugin-install http://plugins.symfony-project.com/sfAdvancedLoggerPlugin
+      symfony plugin-install http://plugins.symfony-project.com/sfAdvancedAdminGeneratorPlugin
     }}}
 
   * change the generator in your `generator.yml`
@@ -22,8 +26,10 @@ generator:
     theme:            default
     
     list:
+      click_action: show ## Change the default hyperlink
       object_actions:
         _edit:
+        _show: ## Show the object (no edit)
 
     edit:
       title: Edit a book
@@ -52,11 +58,13 @@ generator:
 
 == Compatibility with default symfony generator ==
 
-If no 'create' section is present in your configuration, the generator act exactly like the default generator (create action use edit configuration) 
+If no 'create' section is present in your configuration, the generator act exactly like the default generator (create action use edit configuration)
+
+If no 'click_action' option is present in 'list' section, the hyperlink link to edit action 
 
 == Configuration ==
 
-The configuration is the same that the symfony default admin generation.
+The configuration for the 'create' and 'show' sections are the same that the symfony default admin generator.
 
 [http://www.symfony-project.com/book/1_0/14-Generators Click for more information] 
 
@@ -65,3 +73,8 @@ The configuration is the same that the symfony default admin generation.
 === 2007-10-16 | 0.1.0 ===
 
  * romain: plug-in added to symfony
+
+=== 2007-10-23 | 0.1.1 ===
+
+ * romain: add 'show' action
+ * romain: add 'click_action' in the 'list' section

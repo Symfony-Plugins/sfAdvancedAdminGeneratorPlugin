@@ -7,7 +7,7 @@
  * @subpackage <?php echo $this->getGeneratedModuleName() ?>
 
  * @author     Fabien Potencier <fabien.potencier@symfony-project.com>
- * @version    SVN: $Id: actions.class.php 275 2007-10-16 13:49:13Z romain $
+ * @version    SVN: $Id: actions.class.php 300 2007-10-23 15:18:49Z romain $
  */
 class <?php echo $this->getGeneratedModuleName() ?>Actions extends sfActions
 {
@@ -40,6 +40,15 @@ class <?php echo $this->getGeneratedModuleName() ?>Actions extends sfActions
     $this->pager->setPeerCountMethod('<?php echo $this->getParameterValue('list.peer_count_method') ?>');
 <?php endif ?>
     $this->pager->init();
+  }
+
+  public function executeShow()
+  {
+    $this-><?php echo $this->getSingularName() ?> = $this->get<?php echo $this->getClassName() ?>OrCreate();
+    if ($this-><?php echo $this->getSingularName() ?>->isNew()) {
+    	return $this->forward('<?php echo $this->getModuleName() ?>', 'create');
+    }
+    $this->labels = $this->getLabels();
   }
 
   public function executeCreate()
@@ -96,7 +105,7 @@ class <?php echo $this->getGeneratedModuleName() ?>Actions extends sfActions
     
     switch ($this->getActionName()) {
 <?php foreach (array('create', 'edit') as $action): ?>
-      case '<?=$action?>':
+      case '<?php echo $action; ?>':
 <?php foreach ($this->getColumnCategories($action.'.display') as $category): ?>
 <?php foreach ($this->getColumns($action.'.display', $category) as $name => $column): ?>
 <?php $input_type = $this->getParameterValue($action.'.fields.'.$column->getName().'.type') ?>
@@ -157,7 +166,7 @@ class <?php echo $this->getGeneratedModuleName() ?>Actions extends sfActions
 
     switch ($this->getActionName()) {
 <?php foreach (array('create', 'edit') as $action): ?>
-      case '<?=$action?>':
+      case '<?php echo $action ?>':
 <?php foreach ($this->getColumnCategories($action.'.display') as $category): ?>
 <?php foreach ($this->getColumns($action.'.display', $category) as $name => $column): $type = $column->getCreoleType(); ?>
 <?php $name = $column->getName() ?>
@@ -229,7 +238,7 @@ $column = sfPropelManyToMany::getColumn($class, $through_class);
 
     switch ($this->getActionName()) {
 <?php foreach (array('create', 'edit') as $action): ?>
-      case '<?=$action?>':
+      case '<?php echo $action; ?>':
 <?php foreach ($this->getColumnCategories($action.'.display') as $category): ?>
 <?php foreach ($this->getColumns($action.'.display', $category) as $name => $column): $type = $column->getCreoleType(); ?>
 <?php $name = $column->getName() ?>
@@ -462,8 +471,8 @@ $column = sfPropelManyToMany::getColumn($class, $through_class);
   protected function getLabels()
   {
     switch ($this->getActionName()) {
-<?php foreach (array('create', 'edit') as $action): ?>
-      case '<?=$action?>':
+<?php foreach (array('create', 'edit', 'show') as $action): ?>
+      case '<?php echo $action; ?>':
         return array(
 <?php foreach ($this->getColumnCategories($action.'.display') as $category): ?>
 <?php foreach ($this->getColumns($action.'.display', $category) as $name => $column): ?>
